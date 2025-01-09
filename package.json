@@ -1,0 +1,27 @@
+{
+  "name": "bruh",
+  "version": "1.0.0",
+  "description": "A CLI utility package.",
+  "main": "index.js",
+  "bin": {
+    "bruh": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "cli",
+    "working tree",
+    "directory tree",
+    "file system",
+    "terminal"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "chalk": "^5.4.1",
+    "inquirer": "^12.3.0"
+  },
+  "devDependencies": {}
+}

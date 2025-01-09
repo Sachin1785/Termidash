@@ -1,0 +1,16 @@
+{
+  "ignoreNodeModules": true,
+  "ignoreGit": true,
+  "showSize": false,
+  "aliases": {
+    "tree": "t",
+    "summary": "s",
+    "git-status": "gs",
+    "update": "up",
+    "search": "sr",
+    "delete-empty": "dl",
+    "config": "c",
+    "help": "h",
+    "compress": "cmp"
+  }
+}
