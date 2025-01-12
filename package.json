@@ -1,10 +1,10 @@
 {
-  "name": "bruh",
+  "name": "termidash",
   "version": "1.0.0",
   "description": "A CLI utility package.",
   "main": "index.js",
   "bin": {
-    "bruh": "./index.js"
+    "bruh": "index.js"
   },
   "scripts": {
     "start": "node index.js"
