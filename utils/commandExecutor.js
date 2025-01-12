@@ -1,5 +1,5 @@
 const summary = require("./commands/summary");
-const gitStatus = require("./commands/gitStatus");
+// const gitStatus = require("./commands/gitStatus");
 const update = require("./commands/update");
 const search = require("./commands/search");
 const deleteEmptyDirs = require("./commands/deleteEmptyDirs");
@@ -21,9 +21,9 @@ async function executeCommand(command, args) {
     case "summary":
       summary(process.cwd(), settings);
       break;
-    case "git-status":
-      gitStatus();
-      break;
+    // case "git-status":
+    //   gitStatus();
+    //   break;
     case "update":
       update();
       break;
