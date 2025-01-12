@@ -1,6 +1,6 @@
 {
   "name": "termidash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI utility package.",
   "main": "index.js",
   "bin": {
