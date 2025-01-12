@@ -21,6 +21,8 @@ To install Termidash globally, use the following command:
 npm install -g termidash
 ```
 
+> **Note:** It is recommended to install this package globally to use the `bruh` command from anywhere in your terminal.
+
 ## Usage
 
 After installing Termidash, you can use the `bruh` command followed by any of the available commands. Here are some examples:
