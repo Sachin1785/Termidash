@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const summary = require("./summary");
-// const gitStatus = require("./gitStatus");
 const update = require("./update");
 const search = require("./search");
 const deleteEmptyDirs = require("./deleteEmptyDirs");
@@ -16,11 +15,9 @@ async function help() {
     {
       type: "list",
       name: "selectedCommand",
-      message: "Select a command to execute:",
-      choices: [
+      message: "Select a command to execute:",      choices: [
         { name: "Tree", value: "tree" },
         { name: "Summary", value: "summary" },
-        // { name: "Git Status", value: "git-status" },
         { name: "Update", value: "update" },
         { name: "Search", value: "search" },
         { name: "Delete Empty Dirs", value: "delete-empty" },
@@ -32,13 +29,9 @@ async function help() {
     },
   ]);
 
-  switch (selectedCommand) {
-    case "summary":
+  switch (selectedCommand) {    case "summary":
       summary(process.cwd(), settings);
       break;
-    // case "git-status":
-    //   gitStatus();
-    //   break;
     case "update":
       update();
       break;

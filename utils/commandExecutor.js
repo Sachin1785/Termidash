@@ -1,5 +1,4 @@
 const summary = require("./commands/summary");
-// const gitStatus = require("./commands/gitStatus");
 const update = require("./commands/update");
 const search = require("./commands/search");
 const deleteEmptyDirs = require("./commands/deleteEmptyDirs");
@@ -17,13 +16,9 @@ async function executeCommand(command, args) {
   // Resolve command alias
   command = Object.keys(aliases).find(key => aliases[key] === command) || command;
 
-  switch (command) {
-    case "summary":
+  switch (command) {    case "summary":
       summary(process.cwd(), settings);
       break;
-    // case "git-status":
-    //   gitStatus();
-    //   break;
     case "update":
       update();
       break;

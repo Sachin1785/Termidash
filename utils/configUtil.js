@@ -8,11 +8,10 @@ const CONFIG_PATH = path.join(CONFIG_DIR, 'config.json');
 const defaultConfig = {
   ignoreNodeModules: true,
   ignoreGit: true,
-  showSize: false,
+  showSize: false,  
   aliases: {
     "tree": "t",
     "summary": "s",
-    // "git-status": "gs",
     "update": "up",
     "search": "sr",
     "delete-empty": "dl",
