@@ -1,6 +1,7 @@
 const summary = require("./commands/summary");
 const update = require("./commands/update");
 const search = require("./commands/search");
+const find = require("./commands/find");
 const deleteEmptyDirs = require("./commands/deleteEmptyDirs");
 const config = require("./commands/config");
 const tree = require("./commands/tree");
@@ -29,6 +30,9 @@ async function executeCommand(command, args) {
       } else {
         console.error("Error: Please provide a search term.");
       }
+      break;
+    case "find":
+      find(args, settings);
       break;
     case "delete-empty":
       const deletedAny = deleteEmptyDirs(process.cwd(), settings);

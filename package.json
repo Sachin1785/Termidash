@@ -1,7 +1,7 @@
 {
   "name": "termidash",
-  "version": "1.0.2",
-  "description": "A CLI utility package.",
+  "version": "1.0.4",
+  "description": "Blazing fast CLI utility.",
   "main": "index.js",
   "bin": {
     "bruh": "index.js"
@@ -14,9 +14,12 @@
     "working tree",
     "directory tree",
     "file system",
-    "terminal"
+    "terminal",
+    "node_modules",
+    "cleanup",
+    "search"
   ],
-  "author": "Your Name",
+  "author": "sachin1785",
   "license": "MIT",
   "dependencies": {
     "archiver": "^7.0.1",

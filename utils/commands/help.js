@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const summary = require("./summary");
 const update = require("./update");
 const search = require("./search");
+const find = require("./find");
 const deleteEmptyDirs = require("./deleteEmptyDirs");
 const config = require("./config");
 const tree = require("./tree");
@@ -19,6 +20,7 @@ async function help() {
         { name: "Tree", value: "tree" },
         { name: "Summary", value: "summary" },
         { name: "Update", value: "update" },
+        { name: "Find", value: "find" },
         { name: "Search", value: "search" },
         { name: "Delete Empty Dirs", value: "delete-empty" },
         { name: "Config", value: "config" },
@@ -35,7 +37,41 @@ async function help() {
     case "update":
       update();
       break;
-    case "search":
+    case "find": {
+      const { findQuery } = await inquirer.prompt([
+        {
+          type: "input",
+          name: "findQuery",
+          message: "Enter search query:",
+        },
+      ]);
+      const { findType } = await inquirer.prompt([
+        {
+          type: "list",
+          name: "findType",
+          message: "Search for:",
+          choices: [
+            { name: "Files & Folders", value: "" },
+            { name: "Files only", value: "--files" },
+            { name: "Folders only", value: "--folders" },
+          ],
+        },
+      ]);
+      const { findGlobal } = await inquirer.prompt([
+        {
+          type: "confirm",
+          name: "findGlobal",
+          message: "Search globally?",
+          default: false,
+        },
+      ]);
+      const findArgs = [findQuery];
+      if (findType) findArgs.push(findType);
+      if (findGlobal) findArgs.push("--global");
+      find(findArgs, settings);
+      break;
+    }
+    case "search": {
       const { searchTerm } = await inquirer.prompt([
         {
           type: "input",
@@ -49,6 +85,7 @@ async function help() {
         console.error("Error: No search term provided.");
       }
       break;
+    }
     case "delete-empty":
       const deletedAny = deleteEmptyDirs(process.cwd(), settings);
       if (!deletedAny) {
